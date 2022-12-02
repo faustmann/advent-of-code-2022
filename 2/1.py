@@ -47,17 +47,17 @@ def score_strategy(round):
     }
 
     strat_points = map_strategy[round[1]]
-    my_move_points = 0
+    my_move = ''
     if strat_points == 0:
-        my_move_points = score_my_move[lose_counter_action[round[0]]]
+        my_move = lose_counter_action[round[0]]
 
     if strat_points == 3:
-        my_move_points = score_my_move[chr(ord(round[0]) + 23)]
+        my_move = chr(ord(round[0]) + 23)
 
     if strat_points == 6:
-        my_move_points = score_my_move[win_counter_action[round[0]]]
+        my_move = win_counter_action[round[0]]
 
-    return strat_points + my_move_points
+    return strat_points + score_my_move[my_move]
 
 
 part_two_result = sum(score_strategy(round)
