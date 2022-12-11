@@ -18,17 +18,18 @@ fst_part_result = sum(idx * executed_com_res[idx-1]['sum']
                       for idx in range(20, len(executed_com_res), 40))
 print(f'{fst_part_result=}')
 
-output = ''
+snd_part_result = ''
 for idx, cur_exec_command in enumerate(executed_com_res):
     cursor_pos_x = idx % 40
     if cursor_pos_x == 0:
-        output += '\n'
+        snd_part_result += '\n'
 
     if abs(cursor_pos_x - cur_exec_command['sum']) <= 1:
-        output += '#'
+        snd_part_result += '#'
     else:
-        output += '.'
+        snd_part_result += '.'
 
 
-print(output)
+print(snd_part_result)
 print('fin')
+
