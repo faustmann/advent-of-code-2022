@@ -3,7 +3,6 @@ with open("20_1.txt") as fp:
         map(lambda val_str: [int(val_str), False], fp.read().splitlines()))
 
 for idx in range(len(enc_file)):
-    # print(f'{idx=}')
     while not enc_file[idx][1]:
         cur_elem = enc_file[idx]
         new_idx = (idx+cur_elem[0])
